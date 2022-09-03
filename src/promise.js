@@ -1,4 +1,4 @@
-import router from './router/index';
+import App from './router/index';
 import { getStorage } from './utils/index';
 router.router.beforeEach((to, from, next) => {
 const token = getStorage();
@@ -19,6 +19,6 @@ const token = getStorage();
 
 // http://localhost:3000/#/login?redirect=/home
 
-router.router.afterEach((to, from) => {
+App.router.afterEach((to, from) => {
   document.title = `${to.meta.title}-${import.meta.env.VITE_APP_TITLE}`;
 });

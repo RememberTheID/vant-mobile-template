@@ -29,6 +29,7 @@ export default {
   },
   methods: {
     onSubmit (values) {
+      console.log(this.$utils)
       login(values).then(res => {
         if (res.success) {
           this.$utils.setStorage(res.result.token)
