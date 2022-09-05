@@ -1,6 +1,6 @@
 import App from './router/index';
 import { getStorage } from './utils/index';
-router.router.beforeEach((to, from, next) => {
+App.router.beforeEach((to, from, next) => {
 const token = getStorage();
   if (!!token) {
     if (to.meta.noLogin) {
