@@ -4,9 +4,11 @@
   "scripts": {
     "dev": "vite --mode dev",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "lint-fix": "eslint --fix --ext .js --ext .vue src/"
   },
   "dependencies": {
+    "@babel/eslint-parser": "^7.15.8",
     "axios": "^0.27.2",
     "vant": "^3.6.1",
     "vue": "^3.2.8",

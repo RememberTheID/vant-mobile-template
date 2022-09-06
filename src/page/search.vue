@@ -1,5 +1,5 @@
 <template>
-	sear
+  <div>sear</div>
 </template>
 
 <script>

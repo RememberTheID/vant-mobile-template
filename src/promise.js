@@ -1,24 +1,24 @@
-import App from './router/index';
-import { getStorage } from './utils/index';
+import App from './router/index'
+import { getStorage } from './utils/index'
 App.router.beforeEach((to, from, next) => {
-const token = getStorage();
-  if (!!token) {
+  const token = getStorage()
+  if (token) {
     if (to.meta.noLogin) {
-      next({ path: '/home' });
+      next({ path: '/home' })
     } else {
-      next();
+      next()
     }
   } else {
     if (to.meta.noLogin) {
-      next();
+      next()
     } else {
-      next({ path: '/login', query: { redirect: to.fullPath } });
+      next({ path: '/login', query: { redirect: to.fullPath }})
     }
   }
-});
+})
 
 // http://localhost:3000/#/login?redirect=/home
 
 App.router.afterEach((to, from) => {
-  document.title = `${to.meta.title}-${import.meta.env.VITE_APP_TITLE}`;
-});
+  document.title = `${to.meta.title}-${import.meta.env.VITE_APP_TITLE}`
+})

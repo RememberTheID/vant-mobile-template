@@ -1,6 +1,6 @@
-import { createRouter, createWebHashHistory } from 'vue-router';
-import { createApp } from 'vue';
-import App from '../App.vue';
+import { createRouter, createWebHashHistory } from 'vue-router'
+import { createApp } from 'vue'
+import App from '../App.vue'
 
 const routes = [
   {
@@ -13,6 +13,7 @@ const routes = [
         name: 'home',
         meta: {
           title: '主页',
+          noLogin: true,
         },
         component: () => import('./../page/home.vue'),
       },
@@ -20,6 +21,7 @@ const routes = [
         path: '/search',
         meta: {
           title: '搜索页',
+          noLogin: true,
         },
         name: 'search',
         component: () => import('./../page/search.vue'),
@@ -29,6 +31,7 @@ const routes = [
         name: 'firends',
         meta: {
           title: '通信录',
+          noLogin: true,
         },
         component: () => import('./../page/firends.vue'),
       },
@@ -36,6 +39,7 @@ const routes = [
         path: '/setting',
         meta: {
           title: '设置',
+          noLogin: true,
         },
         name: 'setting',
         component: () => import('./../page/setting.vue'),
@@ -51,15 +55,15 @@ const routes = [
     },
     component: () => import('./../page/sys/login.vue'),
   },
-];
+]
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
-});
+})
 
-const app = createApp(App);
-app.use(router);
-app.mount('#app');
+const app = createApp(App)
+app.use(router)
+app.mount('#app')
 
-export default {router,app}
+export default { router, app }
